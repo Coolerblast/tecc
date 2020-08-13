@@ -34,7 +34,7 @@ const ParallaxImage: React.FC<Props> = (props) => {
 
   return (
     <div
-      className={`${styles.container} ${props.className}`}
+      className={`${styles.container} ${props.className ? props.className : ''}`}
       style={{
         width: props.width,
         height: props.height,
