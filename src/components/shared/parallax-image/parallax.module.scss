@@ -1,0 +1,7 @@
+.container {
+  @apply overflow-hidden relative;
+}
+
+.parallax {
+  @apply absolute w-full bg-center bg-no-repeat;
+}
