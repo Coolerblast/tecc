@@ -1,12 +1,12 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, ReactNode } from 'react';
 import styles from './card.module.scss';
 
 type Props = {
   header?: string;
-  content?: string;
   collapsable?: boolean;
   width?: string;
   className?: string;
+  children?: ReactNode;
 };
 
 const Card: React.FC<Props> = (props) => {
@@ -40,7 +40,7 @@ const Card: React.FC<Props> = (props) => {
         {props.collapsable && <div className={styles.indicator}></div>}
       </div>
       <div className={styles['content-wrapper']} ref={contentWrapperRef}>
-        <div className={styles.content}>{props.content}</div>
+        <div className={styles.content}>{props.children}</div>
       </div>
     </div>
   );
@@ -48,8 +48,14 @@ const Card: React.FC<Props> = (props) => {
 
 Card.defaultProps = {
   header: 'Insert text',
-  content:
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi cupiditate animi vitae libero cumque. Vitae nostrum voluptate itaque. Ducimus repudiandae fuga nobis provident delectus, eum aperiam harum doloribus perspiciatis nulla!',
+  children: (
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi cupiditate
+      animi vitae libero cumque. Vitae nostrum voluptate itaque. Ducimus
+      repudiandae fuga nobis provident delectus, eum aperiam harum doloribus
+      perspiciatis nulla!
+    </p>
+  ),
   width: '20em',
   className: '',
 };
