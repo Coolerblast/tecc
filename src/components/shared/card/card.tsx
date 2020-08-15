@@ -27,9 +27,7 @@ const Card: React.FC<Props> = (props) => {
 
   return (
     <div
-      className={`${styles.container} ${
-        props.className ? props.className : ''
-      }`.trim()}
+      className={`${styles.container} ${props.className}`.trim()}
       style={{ width: props.width }}
     >
       <div
@@ -53,6 +51,7 @@ Card.defaultProps = {
   content:
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi cupiditate animi vitae libero cumque. Vitae nostrum voluptate itaque. Ducimus repudiandae fuga nobis provident delectus, eum aperiam harum doloribus perspiciatis nulla!',
   width: '20em',
+  className: '',
 };
 
 export default Card;

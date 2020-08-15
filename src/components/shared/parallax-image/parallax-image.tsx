@@ -34,7 +34,7 @@ const ParallaxImage: React.FC<Props> = (props) => {
 
   return (
     <div
-      className={`${styles.container} ${props.className ? props.className : ''}`}
+      className={`${styles.container} ${props.className}`.trim()}
       style={{
         width: props.width,
         height: props.height,
@@ -58,6 +58,7 @@ const ParallaxImage: React.FC<Props> = (props) => {
 ParallaxImage.defaultProps = {
   aspectRatio: 1,
   speed: 0.2,
+  className: '',
 };
 
 export default ParallaxImage;
