@@ -61,7 +61,7 @@ const ParallaxImage: React.FC<Props> = (props) => {
           backgroundImage: `url(${props.url}`,
         }}
       ></div>
-      <div className="absolute w-full">{props.children}</div>
+      <div className={styles.content}>{props.children}</div>
     </div>
   );
 };

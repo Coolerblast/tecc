@@ -2,6 +2,10 @@
   @apply overflow-hidden relative;
 }
 
+.content {
+  @apply absolute w-full h-full;
+}
+
 .parallax {
   @apply absolute w-full bg-center bg-no-repeat;
 }
