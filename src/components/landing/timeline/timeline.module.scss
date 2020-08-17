@@ -2,25 +2,25 @@ $marker-size: 15px;
 $line-width: 3px;
 $marker-top: 4px;
 $gap-size: 6px;
-$content-spacing: 2rem;
+$content-spacing: 1.5rem;
 
 .container {
-  @apply shadow-md rounded-lg p-8 leading-6;
+  @apply leading-6;
 }
 
 .content {
   @apply pb-10;
   padding-left: $content-spacing;
   h1 {
-    @apply text-2xl font-semibold text-gray-700 pb-1;
+    @apply text-3xl font-semibold text-gray-700 pb-2;
   }
   p {
-    @apply text-sm text-gray-700;
+    @apply text-base text-gray-700;
   }
 }
 
 .info {
-  @apply text-xs tracking-widest uppercase font-bold text-gray-600 whitespace-no-wrap;
+  @apply text-sm tracking-widest uppercase font-bold text-gray-600 whitespace-no-wrap;
   padding-left: $content-spacing;
 }
 
@@ -33,7 +33,7 @@ $content-spacing: 2rem;
   bottom: $gap-size - $marker-top;
   width: $marker-size;
   &::before {
-    @apply rounded-full absolute block bg-orange-600 border-4 border-transparent;
+    @apply rounded-full absolute block bg-primary-600 border-4 border-transparent;
     content: '';
     width: inherit;
     top: $marker-top;
@@ -53,7 +53,7 @@ $content-spacing: 2rem;
 }
 
 .item:hover .marker::before {
-  @apply border-orange-500 bg-transparent;
+  @apply border-accent-500 bg-transparent;
 }
 
 @screen md {
