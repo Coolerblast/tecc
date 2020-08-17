@@ -1,4 +1,5 @@
-import React, { useState, useRef, useEffect, ReactNode } from 'react';
+import React, { useState, useRef, useEffect, ReactNode, useCallback } from 'react';
+import { useWindowEvent } from 'src/hooks/useWindowEvent';
 import styles from './card.module.scss';
 
 type Props = {
@@ -23,12 +24,21 @@ const Card: React.FC<Props> = (props) => {
   useEffect(() => {
     (contentWrapperRef.current as HTMLDivElement).style.height =
       (collapsed ? 0 : initialHeight) + 'px';
-  }, [collapsed]);
+  }, [collapsed, initialHeight]);
+
+  useWindowEvent(
+    'resize',
+    useCallback(() => {
+      setInitialHeight(
+        (contentWrapperRef.current as HTMLDivElement).scrollHeight
+      );
+    }, [])
+  );
 
   return (
     <div
       className={`${styles.container} ${props.className}`.trim()}
-      style={{ width: props.width }}
+      style={{ maxWidth: props.width }}
     >
       <div
         className={`${styles['header-wrapper']} ${
@@ -56,7 +66,6 @@ Card.defaultProps = {
       perspiciatis nulla!
     </p>
   ),
-  width: '20em',
   className: '',
 };
 

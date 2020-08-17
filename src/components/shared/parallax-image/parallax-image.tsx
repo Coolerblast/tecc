@@ -1,4 +1,11 @@
-import React, { ReactNode, useRef, useEffect, useState } from 'react';
+import React, {
+  ReactNode,
+  useRef,
+  useEffect,
+  useState,
+  useCallback,
+} from 'react';
+import { useWindowEvent } from 'src/hooks/useWindowEvent';
 import styles from './parallax.module.scss';
 
 type Props = {
@@ -26,11 +33,15 @@ const ParallaxImage: React.FC<Props> = (props) => {
         offset) *
       props.speed;
     setOffset(initialOffset);
-    window.addEventListener('scroll', (e: Event) => {
+  }, []);
+
+  useWindowEvent(
+    'scroll',
+    useCallback((e: Event) => {
       setOffset(initialOffset - window.scrollY * props.speed);
       console.log(initialOffset);
-    });
-  }, []);
+    }, [])
+  );
 
   return (
     <div
