@@ -49,8 +49,8 @@ const Landing = () => {
         <section id="faq">
           <h1 className="text-6xl text-center font-black">FAQ</h1>
           <div className={styles['questions-wrapper']}>
-            {data.map((data) => (
-              <Card collapsable={true} header={data.question}>
+            {data.map((data, i) => (
+              <Card collapsable={true} header={data.question} key={i}>
                 {data.answer}
               </Card>
             ))}
