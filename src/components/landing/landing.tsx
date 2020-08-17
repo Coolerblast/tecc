@@ -55,12 +55,15 @@ const Landing = () => {
               </Card>
             ))}
           </div>
+          <div className="py-16 flex flex-col items-center">
+            <h1 className="text-5xl font-semibold tracking-widest text-gray-800 pb-10">
+              TIMELINE
+            </h1>
+            <Timeline data={timeline} />
+          </div>
         </section>
       </div>
-      {/* <div className="flex h-screen justify-center items-center">
-        <Timeline data={timeline} />
-      </div> */}
-      <div className="flex h-screen justify-center items-center">
+      <div className="flex justify-center items-center">
         <div>
           {[...Array(9)].map((_, i) => (
             <div className={`w-48 h-24 bg-primary-${i + 1}00`}></div>
