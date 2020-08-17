@@ -1,0 +1,18 @@
+.navbar {
+  @apply flex justify-between items-center my-4 mx-8 z-50;
+  @screen md {
+    @apply w-4/6 mx-auto;
+  }
+  .brand {
+    @apply text-5xl font-extrabold uppercase tracking-wider text-white no-underline;
+  }
+  .links {
+    @apply flex justify-between items-center;
+    li a {
+      @apply text-lg text-white font-semibold uppercase tracking-widest;
+      &:hover {
+        @apply text-primary-500 duration-300;
+      }
+    }
+  }
+}
