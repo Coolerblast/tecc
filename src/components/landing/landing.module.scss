@@ -1,0 +1,30 @@
+.questions-wrapper {
+  @apply grid items-start gap-2;
+  grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+  @screen xl {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.arrow {
+  @apply w-10 h-10;
+  border: solid white;
+  border-width: 0 0.1em 0.1em 0;
+  transform: rotate(45deg);
+}
+
+.bounce {
+  animation: bounce 1s infinite ease-in-out;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(-5%);
+  }
+  50% {
+    transform: translateY(5%);
+  }
+  100% {
+    transform: translateY(-5%);
+  }
+}
