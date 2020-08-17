@@ -1,0 +1,122 @@
+$marker-size: 15px;
+$line-width: 3px;
+$marker-top: 4px;
+$gap-size: 6px;
+$content-spacing: 2rem;
+
+.container {
+  @apply shadow-md rounded-lg p-8 leading-6;
+}
+
+.content {
+  @apply pb-10;
+  padding-left: $content-spacing;
+  h1 {
+    @apply text-2xl font-semibold text-gray-700 pb-1;
+  }
+  p {
+    @apply text-sm text-gray-700;
+  }
+}
+
+.info {
+  @apply text-xs tracking-widest uppercase font-bold text-gray-600 whitespace-no-wrap;
+  padding-left: $content-spacing;
+}
+
+.item {
+  @apply relative;
+}
+
+.marker {
+  @apply absolute top-0 left-0;
+  bottom: $gap-size - $marker-top;
+  width: $marker-size;
+  &::before {
+    @apply rounded-full absolute block bg-orange-600 border-4 border-transparent;
+    content: '';
+    width: inherit;
+    top: $marker-top;
+    height: $marker-size;
+    transition: background-color 300ms ease-in-out, border 300ms ease-in-out;
+  }
+  &::after {
+    @apply absolute block bg-gray-600 bottom-0;
+    content: '';
+    width: $line-width;
+    left: $marker-size / 2 - $line-width / 2;
+    top: $marker-size + $marker-top + $gap-size;
+  }
+  .item:last-child &:after {
+    content: none;
+  }
+}
+
+.item:hover .marker::before {
+  @apply border-orange-500 bg-transparent;
+}
+
+@screen md {
+  .container {
+    @apply table;
+  }
+  .item {
+    @apply table-row p-0;
+  }
+  .info,
+  .marker,
+  .content {
+    @apply table-cell align-top;
+  }
+  .marker {
+    @apply relative;
+  }
+  .content {
+    padding-left: $content-spacing / 2;
+  }
+  .info {
+    @apply text-right;
+    padding-right: $content-spacing / 2;
+  }
+}
+
+@screen lg {
+  .item,
+  .info,
+  .marker,
+  .content {
+    @apply block m-0;
+  }
+  .item {
+    @apply overflow-hidden;
+  }
+  .marker {
+    @apply absolute;
+    left: 50%;
+    margin-left: -$marker-size / 2;
+  }
+  .info,
+  .content {
+    @apply w-1/2;
+  }
+  .item:nth-child(odd) .info {
+    float: left;
+    text-align: right;
+    padding-right: $content-spacing;
+  }
+  .item:nth-child(odd) .content {
+    float: right;
+    text-align: left;
+    padding-left: $content-spacing;
+  }
+  .item:nth-child(even) .info {
+    float: right;
+    text-align: left;
+    padding-left: $content-spacing;
+  }
+  .item:nth-child(even) .content {
+    float: left;
+    text-align: right;
+    padding-right: $content-spacing;
+  }
+}
