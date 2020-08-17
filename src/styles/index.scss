@@ -1,18 +1,27 @@
-@tailwind base;
+$base-color: #30d2ff;
+$colors: (
+  primary: $base-color,
+  secondary: adjust-hue($base-color,-160deg),
+  accent: adjust-hue($base-color, 160deg) 
+);
+$color-ratio: 8%;
 
-/* Write your own custom base styles here */
-
-/* Start purging... */
-@tailwind components;
-/* Stop purging. */
-
-/* Write you own custom component styles here */
-.btn-blue {
-  @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
+:root {
+  @each $name, $color in $colors {
+    --color-#{$name}-100: #{lighten($color, $color-ratio * 4)};
+    --color-#{$name}-200: #{lighten($color, $color-ratio * 3)};
+    --color-#{$name}-300: #{lighten($color, $color-ratio * 2)};
+    --color-#{$name}-400: #{lighten($color, $color-ratio * 1)};
+    --color-#{$name}-500: #{$color};
+    --color-#{$name}-600: #{darken($color, $color-ratio * 1)};
+    --color-#{$name}-700: #{darken($color, $color-ratio * 2)};
+    --color-#{$name}-800: #{darken($color, $color-ratio * 3)};
+    --color-#{$name}-900: #{darken($color, $color-ratio * 4)};
+  }
 }
 
-/* Start purging... */
-@tailwind utilities;
-/* Stop purging. */
+@tailwind base;
 
-/* Your own custom utilities */
+@tailwind components;
+
+@tailwind utilities;
