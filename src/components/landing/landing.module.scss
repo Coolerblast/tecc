@@ -1,12 +1,12 @@
 .welcome-header {
-  @apply flex-grow flex flex-col items-center justify-center mb-40;
+  @apply flex-grow flex flex-col items-center justify-center mb-32;
   p {
     @apply text-xl font-bold tracking-wider uppercase text-white;
   }
   h1 {
     @apply text-5xl text-center text-white font-black;
   }
-  @screen sm{
+  @screen sm {
     p {
       @apply text-2xl;
     }
@@ -17,10 +17,10 @@
 }
 
 .questions-wrapper {
-  @apply grid items-start gap-2 mx-auto;
-  grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
-  @screen md {
+  @apply grid items-start gap-2 mx-auto w-5/6;
+  @screen sm {
     @apply w-3/4;
+    grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
   }
   @screen xl {
     grid-template-columns: repeat(3, 1fr);

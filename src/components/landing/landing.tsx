@@ -30,12 +30,12 @@ const Landing = () => {
             <p>Welcome to the</p>
             <h1>TJ Ethics Case Competition</h1>
           </div>
-          <div className={`${styles.bounce} mx-auto mb-12`}>
+          <div className={`${styles.bounce} mx-auto mb-20`}>
             <div className={styles.arrow}></div>
           </div>
         </div>
       </ParallaxImage>
-      <div className="w-11/12 sm:w-2/3 mx-auto">
+      <div className="w-11/12 mx-auto">
         <div className="py-32 w-3/4 mx-auto">
           <p className="text-3xl text-gray-800 p-8 leading-relaxed">
             <strong>Technology is rapidly changing our lives</strong>, yet the
@@ -48,7 +48,7 @@ const Landing = () => {
           </p>
         </div>
         <section id="faq">
-          <h1 className="text-6xl text-center font-black">FAQ</h1>
+          <h1 className="text-6xl text-center font-black pb-8">FAQ</h1>
           <div className={styles['questions-wrapper']}>
             {data.map((data, i) => (
               <Card collapsable={true} header={data.question} key={i}>
