@@ -18,14 +18,14 @@ const links = [
 const Landing = () => {
   return (
     <div>
-      <ParallaxImage url={'https://picsum.photos/2000/2000'} height="100vh">
+      <ParallaxImage url={'https://picsum.photos/2000/2000'} color="black" height="100vh" imageHeight="150vh">
         <div className="flex flex-col h-full">
           <NavBar links={links} />
-          <div className="flex-grow flex flex-col items-center justify-center mb-40">
-            <p className="text-2xl font-bold tracking-wider uppercase text-white">
+          <div className={styles['welcome-header']}>
+            <p >
               Welcome to the
             </p>
-            <h1 className="text-6xl text-center text-white font-black">
+            <h1 >
               TJ Ethics Case Competition
             </h1>
           </div>
@@ -34,7 +34,7 @@ const Landing = () => {
           </div>
         </div>
       </ParallaxImage>
-      <div className="w-2/3 mx-auto">
+      <div className="w-11/12 sm:w-2/3 mx-auto">
         <div className="py-32 w-3/4 mx-auto">
           <p className="text-3xl text-gray-800 p-8 leading-relaxed">
             <strong>Technology is rapidly changing our lives</strong>, yet the
@@ -63,20 +63,20 @@ const Landing = () => {
           </div>
         </section>
       </div>
-      <div className="flex justify-center items-center">
+      <div className="grid grid-cols-3">
         <div>
           {[...Array(9)].map((_, i) => (
-            <div className={`w-48 h-24 bg-primary-${i + 1}00`}></div>
+            <div className={`h-24 bg-primary-${i + 1}00`}></div>
           ))}
         </div>
         <div>
           {[...Array(9)].map((_, i) => (
-            <div className={`w-48 h-24 bg-secondary-${i + 1}00`}></div>
+            <div className={`h-24 bg-secondary-${i + 1}00`}></div>
           ))}
         </div>
         <div>
           {[...Array(9)].map((_, i) => (
-            <div className={`w-48 h-24 bg-accent-${i + 1}00`}></div>
+            <div className={`h-24 bg-accent-${i + 1}00`}></div>
           ))}
         </div>
       </div>

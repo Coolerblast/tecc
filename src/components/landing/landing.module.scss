@@ -1,6 +1,27 @@
+.welcome-header {
+  @apply flex-grow flex flex-col items-center justify-center mb-40;
+  p {
+    @apply text-xl font-bold tracking-wider uppercase text-white;
+  }
+  h1 {
+    @apply text-5xl text-center text-white font-black;
+  }
+  @screen sm{
+    p {
+      @apply text-2xl;
+    }
+    h1 {
+      @apply text-6xl;
+    }
+  }
+}
+
 .questions-wrapper {
-  @apply grid items-start gap-2;
+  @apply grid items-start gap-2 mx-auto;
   grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+  @screen md {
+    @apply w-3/4;
+  }
   @screen xl {
     grid-template-columns: repeat(3, 1fr);
   }
