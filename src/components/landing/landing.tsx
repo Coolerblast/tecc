@@ -1,4 +1,4 @@
-import { NavBar } from './navbar';
+import { Navbar } from './navbar';
 import { ParallaxImage } from '../shared/parallax-image';
 import { Card } from '../shared/card';
 import { Timeline } from './timeline';
@@ -18,16 +18,17 @@ const links = [
 const Landing = () => {
   return (
     <div>
-      <ParallaxImage url={'https://picsum.photos/2000/2000'} color="black" height="100vh" imageHeight="150vh">
+      <ParallaxImage
+        url={'https://picsum.photos/2000/2000'}
+        color="black"
+        height="100vh"
+        imageHeight="150vh"
+      >
         <div className="flex flex-col h-full">
-          <NavBar links={links} />
+          <Navbar links={links} />
           <div className={styles['welcome-header']}>
-            <p >
-              Welcome to the
-            </p>
-            <h1 >
-              TJ Ethics Case Competition
-            </h1>
+            <p>Welcome to the</p>
+            <h1>TJ Ethics Case Competition</h1>
           </div>
           <div className={`${styles.bounce} mx-auto mb-12`}>
             <div className={styles.arrow}></div>

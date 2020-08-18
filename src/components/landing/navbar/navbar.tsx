@@ -6,7 +6,7 @@ type Props = {
   links: { href: string; label: string }[];
 };
 
-const NavBar: React.FC<Props> = (props) => {
+const Navbar: React.FC<Props> = (props) => {
   const [isCollapsed, setCollapsed] = useState(true);
   return (
     <nav className={styles.navbar}>
@@ -39,4 +39,4 @@ const NavBar: React.FC<Props> = (props) => {
   );
 };
 
-export default NavBar;
+export default Navbar;
