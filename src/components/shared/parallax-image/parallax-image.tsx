@@ -13,7 +13,7 @@ type Props = {
   url: string;
   width?: string;
   height?: string;
-  aspectRatio?: number;
+  imageHeight: string;
   speed?: number;
   children?: ReactNode;
   className?: string;
@@ -21,17 +21,16 @@ type Props = {
 
 const ParallaxImage: React.FC<Props> = (props) => {
   const elemRef = useRef(null);
-  let initialOffset;
-  const [imageHeight, setImageHeight] = useState(0);
+  const [initialOffset, setInitialOffset] = useState(0);
   const [offset, setOffset] = useState(0);
   useEffect(() => {
-    setImageHeight(elemRef.current.offsetWidth * props.aspectRatio);
-    initialOffset =
+    setInitialOffset(
       (elemRef.current.getBoundingClientRect().top +
         window.scrollY -
         elemRef.current.offsetHeight -
         offset) *
-      props.speed;
+        props.speed
+    );
     setOffset(initialOffset);
   }, []);
 
@@ -39,7 +38,6 @@ const ParallaxImage: React.FC<Props> = (props) => {
     'scroll',
     useCallback((e: Event) => {
       setOffset(initialOffset - window.scrollY * props.speed);
-      console.log(initialOffset);
     }, [])
   );
 
@@ -56,7 +54,7 @@ const ParallaxImage: React.FC<Props> = (props) => {
         className={styles.parallax}
         style={{
           transform: `translateY(${offset}px)`,
-          height: imageHeight,
+          height: props.imageHeight,
           backgroundColor: props.color,
           backgroundImage: `url(${props.url}`,
         }}
@@ -67,7 +65,6 @@ const ParallaxImage: React.FC<Props> = (props) => {
 };
 
 ParallaxImage.defaultProps = {
-  aspectRatio: 1,
   speed: 0.2,
   className: '',
 };
