@@ -53,7 +53,7 @@ const SmoothScroll: React.FC<Props> = (props) => {
 };
 
 SmoothScroll.defaultProps = {
-  duration: '1000ms',
+  duration: '2000ms',
   easing: 'cubic-bezier(0.23, 1, 0.32, 1)',
 };
 
