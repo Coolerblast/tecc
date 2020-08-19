@@ -1,0 +1,10 @@
+.questions-wrapper {
+  @apply grid items-start gap-2 mx-auto w-5/6;
+  @screen sm {
+    @apply w-3/4;
+    grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+  }
+  @screen xl {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
