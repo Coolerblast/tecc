@@ -7,5 +7,6 @@
 }
 
 .parallax {
-  @apply absolute w-full bg-center bg-no-repeat;
+  @apply absolute w-full bg-no-repeat bg-cover;
+  background-position: center bottom;
 }
