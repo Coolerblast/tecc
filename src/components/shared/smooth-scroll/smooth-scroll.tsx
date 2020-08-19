@@ -38,7 +38,7 @@ const SmoothScroll: React.FC<Props> = (props) => {
   );
   return (
     <>
-      <div className="h-screen overflow-hidden fixed">
+      <div className="w-full h-full overflow-hidden fixed">
         <div
           className={styles.container}
           style={{ transition: `transform ${props.duration} ${props.easing}` }}
