@@ -3,7 +3,7 @@ export default [
     question: 'Where is it held?',
     answer: (
       <p>
-        Due to COVID-19 restrictions, all rounds of TECC 2021 will be held
+        Due to COVID-19 complications, all rounds of TECC 2021 will be held
         completely online.
       </p>
     ),
@@ -19,7 +19,7 @@ export default [
             are uploaded through our online platform.
           </li>
           <li>
-            The teams that submit a satisfactory solution will continue to the
+            Teams that submit an outstanding solution will continue to the
             finals which is held online as a video conference with industry
             professionals.
           </li>
@@ -31,8 +31,9 @@ export default [
     question: 'Who will be judging my work?',
     answer: (
       <p>
-        Preliminary entries will be judged by our team. Finalists will present
-        to industry professionals over a video conference.
+        Preliminary entries will be judged by our team from TJ's Philosophy
+        Club. Finalists will present to industry professionals in technology,
+        ethics, and business.
       </p>
     ),
   },
@@ -57,15 +58,19 @@ export default [
   {
     question: 'Who can participate?',
     answer: (
-      <p>TECC 2021 is open to 7th to 12th graders from across the country.</p>
+      <p>
+        TECC 2021 is open to 7th to 12th graders from across the country. An
+        honor code will enforced preventing additional assistance.
+      </p>
     ),
   },
   {
     question: 'Are there prizes?',
     answer: (
       <p>
-        Yes! We have over <span className="text-green-500 font-bold">$1.0000</span> in prizes and they will be
-        disclosed closer to the actual competition!
+        Yes! We have over{' '}
+        <span className="text-green-500 font-bold">$1.0000</span> in prizes!
+        Find out what they are in March!
       </p>
     ),
   },
@@ -73,8 +78,8 @@ export default [
     question: 'What does it cost?',
     answer: (
       <p>
-        Absolutely nothing! There is no cost for participating and all prizes
-        and shipping fees will be covered by TECC.
+        Absolutely nothing! There is no cost for participating. All prizes and
+        shipping fees will be covered by TECC.
       </p>
     ),
   },
