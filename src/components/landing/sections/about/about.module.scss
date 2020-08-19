@@ -1,0 +1,39 @@
+.container {
+  @apply flex flex-col py-32 px-16 items-center justify-evenly;
+  h1 {
+    @apply text-2xl text-gray-800 leading-relaxed;
+    margin-bottom: 2em;
+  }
+  div {
+    @apply flex flex-col w-full justify-center items-center;
+    ol {
+      @apply flex flex-col gap-4;
+      li {
+        @apply w-full p-4 bg-gray-200 rounded-lg;
+        p {
+          @apply text-2xl font-semibold text-gray-700 text-center;
+        }
+      }
+    }
+    h2 {
+      @apply mt-10 text-sm text-gray-700;
+    }
+  }
+  @screen md {
+    h1 {
+      @apply text-3xl;
+      max-width: 60%;
+    }
+    div {
+      ol {
+        @apply flex-row;
+      }
+    }
+  }
+  @screen xl {
+    h1 {
+      @apply text-3xl;
+      max-width: 40%;
+    }
+  }
+}
