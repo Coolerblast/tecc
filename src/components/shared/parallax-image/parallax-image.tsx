@@ -15,6 +15,8 @@ type Props = {
   height?: string;
   imageHeight: string;
   speed?: number;
+  duration?: string;
+  easing?: string;
   children?: ReactNode;
   className?: string;
 };
@@ -53,7 +55,8 @@ const ParallaxImage: React.FC<Props> = (props) => {
       <div
         className={styles.parallax}
         style={{
-          transform: `translateY(${offset}px)`,
+          transform: `translate3d(0px, ${offset}px, 0px)`,
+          transition: `transform ${props.duration} ${props.easing}`,
           height: props.imageHeight,
           backgroundColor: props.color,
           backgroundImage: `url(${props.url}`,
@@ -67,6 +70,8 @@ const ParallaxImage: React.FC<Props> = (props) => {
 ParallaxImage.defaultProps = {
   speed: 0.2,
   className: '',
+  duration: '1000ms',
+  easing: 'ease-out',
 };
 
 export default ParallaxImage;
