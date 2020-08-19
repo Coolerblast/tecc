@@ -1,0 +1,27 @@
+.container {
+  @apply flex flex-col items-center bg-primary-200 p-8;
+  min-height: 100vh;
+  div {
+    @apply w-full;
+  }
+  p {
+    @apply text-xl text-gray-900 p-8 leading-relaxed;
+  }
+
+  @screen sm {
+    p {
+      @apply text-xl;
+    }
+  }
+  @screen md {
+    p {
+      @apply text-2xl;
+    }
+  }
+  @screen lg {
+    @apply flex-row p-32;
+    div {
+      @apply w-1/2;
+    }
+  }
+}
