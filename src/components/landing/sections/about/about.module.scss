@@ -1,7 +1,8 @@
 .container {
-  @apply flex flex-col py-32 px-16 items-center justify-evenly;
+  @apply flex flex-col py-32 items-center justify-evenly w-5/6 mx-auto;
+  min-height: 100vh;
   h1 {
-    @apply text-2xl text-gray-800 leading-relaxed;
+    @apply text-2xl text-gray-800 leading-relaxed font-bold text-center;
     margin-bottom: 2em;
   }
   div {
@@ -22,7 +23,6 @@
   @screen md {
     h1 {
       @apply text-3xl;
-      max-width: 60%;
     }
     div {
       ol {
@@ -30,10 +30,12 @@
       }
     }
   }
+  @screen lg {
+    @apply w-2/3;
+  }
   @screen xl {
     h1 {
-      @apply text-3xl;
-      max-width: 40%;
+      @apply text-4xl;
     }
   }
 }
