@@ -70,8 +70,8 @@ const ParallaxImage: React.FC<Props> = (props) => {
 ParallaxImage.defaultProps = {
   speed: 0.2,
   className: '',
-  duration: '1000ms',
-  easing: 'ease-out',
+  duration: '2000ms',
+  easing: 'cubic-bezier(0.23, 1, 0.32, 1)',
 };
 
 export default ParallaxImage;
