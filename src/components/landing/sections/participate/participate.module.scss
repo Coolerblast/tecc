@@ -1,0 +1,28 @@
+.container {
+    @apply bg-gray-900 py-20;
+    min-height: 100vh;
+}
+
+.wrapper {
+    @apply w-4/5 mx-auto flex flex-col gap-20;
+    .header {
+        width: 80%;
+        h1 {
+            @apply text-6xl font-black text-white pb-4;
+        }
+    }
+    .content {
+        @apply flex flex-col gap-20;
+        div {
+            h2 {
+                @apply text-5xl font-bold text-accent-400 leading-none pb-4;
+            }
+            p {
+                @apply text-2xl font-light leading-tight text-gray-200;
+            }
+        }
+    }
+    @screen md {
+        @apply flex-row;
+    }
+}
