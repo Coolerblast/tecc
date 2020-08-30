@@ -1,0 +1,45 @@
+.container {
+  @apply bg-gray-900 py-20;
+  min-height: 100vh;
+}
+
+.wrapper {
+  @apply flex flex-col gap-10 justify-center w-5/6 mx-auto;
+  h1 {
+    @apply text-5xl font-extrabold text-gray-100 leading-tight;
+  }
+  h2 {
+    @apply text-4xl text-gray-300 leading-relaxed;
+  }
+  .column {
+    @apply flex flex-col w-full gap-10;
+    div {
+      @apply bg-accent-300 p-6;
+      height: 35em;
+      background-image: url(https://picsum.photos/500/1000);
+      p {
+        @apply text-2xl text-gray-800;
+      }
+    }
+  }
+
+  @screen md {
+    @apply flex-row w-2/3;
+    h1 {
+      @apply text-6xl;
+    }
+    .column {
+      @apply w-1/2;
+    }
+  }
+  @screen lg {
+    h2 {
+      @apply w-4/5 text-5xl font-bold text-left;
+    }
+  }@screen xl {
+    @apply w-5/12;
+    h2 {
+      @apply w-4/5 text-5xl font-bold text-left;
+    }
+  }
+}
